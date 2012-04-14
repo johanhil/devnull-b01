@@ -1,0 +1,8 @@
+Problem one is that it says onClick where it should be onclick.
+
+The second problem is that the code is broken.
+
+Javascript, different to many other languages, does not create a new scope inside of the for loop. This means that the var i is not local to the for loop, but to the function addButtonsToNode. So when you click the div's, the i that is alerted is not the correct i, but the latest i (all div's alert 5).
+
+The solution to this problem is to use a closure, and wrap the onclick binding in a function where  i is a parameter.
+
